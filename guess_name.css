@@ -1,0 +1,194 @@
+/* GENERAL CSS */
+
+* {
+    font-family: 'Spectral', serif;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-buttons a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #444;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+}
+
+.nav-buttons a:hover {
+    background-color: #555;
+}
+
+.page-title {
+    color: gray;
+    text-align: center;
+}
+
+.page-title-container {
+    margin: 40px 0 40px 0;
+}
+
+
+/* Guess House CSS */
+
+#main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 70%;
+    justify-content: center;
+}
+
+.character {
+    margin: auto;
+    width: 100%;
+}
+
+.input {
+    margin: auto;
+    width: 220px;
+}
+
+.character-image {
+    border-radius: 15px;
+    width: 220px;
+    height: 280px;
+}
+
+.character-name {
+    color: rgb(218, 218, 218);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.generateBtn {
+    background-color: #111111;
+    padding: 10px 20px 10px 20px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+.generateicon {
+    width: 20px;
+    height: 20px;
+    opacity: 50%;
+    margin: 0 5px 0 0;
+}
+
+.inputContainer {
+    width: 20%;
+    margin: auto;
+    padding: 25px 0 0 0;
+    border-radius: 50px;
+}
+
+.inputContainer input {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+}
+
+.inputContainer button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+}
+
+.body {
+    background-image: url("imgs/background_general2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.houseBtn:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* Feedback */
+
+/* Correct Guess: Golden Glow and Magic Dots */
+@keyframes goldGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(255, 223, 0, 0.8), 0 0 40px rgba(255, 223, 0, 0.6), 0 0 60px rgba(255, 223, 0, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(255, 223, 0, 1), 0 0 60px rgba(255, 223, 0, 0.8), 0 0 80px rgba(255, 223, 0, 0.6);
+    }
+}
+
+.gold-glow {
+    animation: goldGlow 1.5s ease-in-out forwards;
+}
+
+/* Magic Dots Animation */
+@keyframes magicDots {
+    0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5) translateY(-100px);
+        opacity: 0;
+    }
+}
+
+.magic-dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(255, 215, 0, 0.9);
+    border-radius: 50%;
+    animation: magicDots 3s ease-out forwards;
+    pointer-events: none;
+}
+
+/* Incorrect Guess: Shake */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}

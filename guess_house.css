@@ -1,0 +1,212 @@
+/* GENERAL CSS */
+
+* {
+    font-family: 'Spectral', serif;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-buttons a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #444;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+}
+
+.nav-buttons a:hover {
+    background-color: #555;
+}
+
+.page-title {
+    color: gray;
+    text-align: center;
+}
+
+.page-title-container {
+    margin: 40px;
+}
+
+
+/* Guess House CSS */
+
+#main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 70%;
+    justify-content: center;
+}
+
+.character {
+    margin: auto;
+    width: 100%;
+}
+
+.character-image {
+    border-radius: 15px;
+    width: 250px;
+    height: 300px;
+}
+
+.character-name {
+    color: rgb(218, 218, 218);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.generateBtn {
+    background-color: #111111;
+    padding: 10px 20px 10px 20px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+.generateicon {
+    width: 20px;
+    height: 20px;
+    opacity: 50%;
+    margin: 0 5px 0 0;
+}
+
+.body {
+    background-image: url("imgs/background_general2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.houseicon {
+    width: 30px;
+    height: 30px;
+}
+
+.houseBtn {
+    margin: 30px;
+    width: 240px;
+    height: 85px;
+    font-size: 20px;
+    border-radius: 15px;
+    background-color: #131313;
+    transition: transform .1s;
+}
+
+.houseBtn:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.buttonGry {
+    background-image: url("imgs/Gry_background.png");
+    font-weight: bold;
+    border: none;
+    color: #ffcc80;
+}
+
+.buttonHuf {
+    background-image: url("imgs/Huf_background.png");
+    font-weight: bold;
+    border: none;
+    color: #ffe8a3;
+}
+
+.buttonRav {
+    background-image: url("imgs/Rav_background.png");
+    font-weight: bold;
+    border: none;
+    color: #ffe0b2;
+}
+
+.buttonSly {
+    background-image: url("imgs/Sly_background.png");
+    font-weight: bold;
+    border: none;
+    color: #d2fff0;
+}
+
+/* Feedback */
+
+/* Opção incorreta */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Opção correta */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px gold;
+    }
+
+    50% {
+        box-shadow: 0 0 20px gold;
+    }
+
+    100% {
+        box-shadow: 0 0 10px gold;
+    }
+}
+
+.houseBtn.incorrect {
+    animation: shake 0.3s ease;
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+.houseBtn.correct {
+    position: relative;
+    animation: glow 1s ease;
+    background-color: rgba(255, 215, 0, 0.3);
+}
+
+.houseBtn.correct::before {
+    content: "Correct!";
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: gold;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 0 0 5px gold, 0 0 10px gold;
+    pointer-events: none;
+}
